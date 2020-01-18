@@ -3,171 +3,148 @@ layout: default
 ---
 
 <div class="wrapper">
-      <div class="grid-container">
-        <div class="header">
-          <a href="index.html">
-            <img src="img/header_logo.png" id="logo">
-          </a>
-          <div id="show">
-            <i class="material-icons md-48">menu</i>
-          </div>
-        <nav class="menu">
-          <div class="top_menu">
-            <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#desc">About Wales</a></li>
-              <li><a href="#docs">Documents</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="top"></div>
-      <div class="news">
-        <div class="newsList">
-          <h1 class="newsList__header">NEWS</h1>
-          <ul class="newsList__ul">
-            {% for post in site.posts limit:3 %}
-              <li class="newsList__ul--li">
-                <a class="newsList__ul--li-a" href="{{ post.url }}">{{ post.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="images">
-        <div class="grid-container-images">
-          <div><img src="img/image1.jpg"></div>
-          <div><img src="img/image2.jpg"></div>
-          <div><img src="img/image3.jpg"></div>
-          <div><img src="img/image4.jpg"></div>
-          <div><img src="img/image5.jpg"></div>
-          <div><img src="img/image6.jpg"></div>
-          <div><img src="img/image7.jpg"></div>
-          <div><img src="img/image8.jpg"></div>
-          <div><img src="img/image9.jpg"></div>
-          <div><img src="img/image10.jpg"></div>
-          <div><img src="img/image11.jpg"></div>
-          <div><img src="img/image12.jpg"></div>
-        </div>
-      </div>
-      <div class="about" id="about">
-        <h1>
-          About Us
-        </h1>
-        <p>
-            　日本カムリ学会は2005年1月29日の設立記念集会（於　金城学院大学文学部大会議室）において設立されました。当初は「日本カムライグ学会」という名称で始まりましたが、2009年12月に「日本カムリ学会」と改めました。さらに2015年12月以降、本学会名に副題がつけられ、「日本カムリ学会（日本ウェールズ学会）」という名称になり、今日に至っています。
-            <button id="more_btn">続きを読む</button>
-        </p>
-        <p id="more">
-          　英国を構成する４つの国の一つ「ウェールズ」は、現地語である「ウェールズ語」では「カムリ」（Cymru）と呼びます。本学会の名称「日本カムリ学会」は、「カムリ」すなわち「ウェールズ」を研究対象とする学術団体です。カムリの国の言語・歴史・文学・社会・文化等、様々な側面について学術研究を行い、また啓蒙活動を行うことが本学会の目的です。
-          <br><br>
-          　本学会の創立者である水谷宏氏（現在本学会名誉会員）は設立記念講演において、「カムリ学」（当時の呼称では「カムライグ学」）という分野を打ち立てました。上記の通り、「カムリ学」とはカムリの国を対象とする研究分野です。今日の日本では、「カムリ学」という名称はおろか、英語名の「ウェールズ学」ですら日本語としては全く市民権を得ていません。しかし、この国の文化、歴史、文学、言語、経済など様々な側面を研究対象または関心対象とする方々は、国内に多数おられます。こういった方々の一つ一つのカムリ理解を落ち葉拾いのように集め、日本国内におけるカムリ学という研究分野を構築していくことが、本学会の目的です。
-          <br><br>
-          　当然現地カムリおよび英国、さらには西洋において、「カムリ学」はAstudiaethau Cymreig／Welsh Studiesというカムリ語または英語の名称と共に、一定の認知度を得て研究分野として確立していており、日々その研究は発展しています。日本におけるカムリ学は現在のところ、現地におけるカムリ学研究の調査とその紹介といった基礎研究が中心的作業となっています。カムリ学の基礎研究を進める上で、本学会のモットーとしていることが、研究成果の社会への還元です。そのために、平易な日本語によってカムリ学を紹介することを心がけております。カムリという国について、例えカムリ語や英語が一言も分からずとも、直接日本語でその本質が理解できるような学会を目指しています。真の意味で開かれた学会を目指しています。
-          <br>
-          <br>
-          日本カムリ学会代表幹事　小池剛史
-        </p>
-      </div>
-      <div class="desc" id="desc">
-          <h1>
-            About Wales
-          </h1>
-          <div class="sub-container">
-            <div class="desc_left">
-                <p>
-                  ウェールズは、英国の南西部に位置し、その面積は約2万㎢（ちょうど四国と東京を合わせた位）、その中に約300万人の人口を抱えています。山岳地帯が多く、南北をカンブリア山脈が走ります。この険しい山々がウェールズ独自の文化を守ったとも言われています。
-                </p>
-                <p>
-                  現在ウェールズの公用語となっているウェールズ語で、ウェールズのことを「カムリ」（Cymru）と呼びます。カムリは、その長い歴史の中で、独自の言語、文化、文学を次世代に伝えてきました。ただ単に伝統を守り続けるだけでなく、その時代時代の文脈の中で伝統を活かすことにより、新たな文化が常に創造され続けています。
-                </p>
-            </div>
-            <div class="desc_right">
-              <img src="img/wales_location.png" id="wales_location">
-            </div>
-          </div>
-      </div>
-      <div class="docs" id="docs">
-        <h1>Documents</h1>
-        <ul>
-          <div class="docs-container">
-            <li class="docs_folderlink">
-                <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1qjVcvZHWRK6UNLRcIj1v8xHevV6QIOOe?usp=sharing">カムリの地名のカタカナ表記</a>
-            </li>
-            <li class="docs_folderlink">
-                <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1JdTn3VmSJcHJ3e0nhLDcI6fWmvWuH7Ci?usp=sharing">寄稿・紀行・聴こう</a>
-            </li>
-          </div>
-          <div class="docs-container">
-            <li class="docs_folderlink">
-              <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1CI8eI-uyWP939GIloZHUzfgXw0O_znX-?usp=sharing">研究ノート</a>
-            </li>
-            <li class="docs_folderlink">
-                <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1k3dFGKZL2YVv2t_i60YSlKV7wLyq5zJF?usp=sharing">研究紹介</a>
-            </li>
-          </div>
-          <div class="docs-container">
-            <li class="docs_folderlink">
-              <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1GZsfgwte2aTbYzvwoolakOxsnPJkP9qJ?usp=sharing">投稿論文</a>
-            </li>
-            <li class="docs_folderlink">
-              <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1aG8QmLLOSUwI7QPIfHWmAC5K-K7LzS6i?usp=sharing">報告要旨</a>
-            </li>
-          </div>
-        </ul>
-      </div>
-      <div class="map">
-        <div id="map"></div>
-      </div>
-      <div class="contact" id="contact">
-        
-        <h1><span><i class="fas fa-envelope"></i></span>Contact</h1>
-        <div class="forms">
-          <form
-            action="https://formspree.io/xpzqejlv"
-            method="POST"
-          >
-            <p>
-              <label id="label-email">
-                Your Email
-                <br>
-                <input type="text" name="_replyto" id="form-email" placeholder="example@example.com">
-              </label>
-            </p>
-            <p>
-              <label>
-                Your Name
-                <br>
-                <input type="text" name="name">
-              </label>
-            </p>
-            <p>
-              <label>
-                Message
-                <br>
-                <textarea name="message" rows="10"></textarea>
-              </label>
-            </p>
-            <button type="submit">Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    
-    <!-- ハンバーガーメニュー -->
-    <div id="cover"></div>
-    <div id="menu">
-    <div>
-    </div>
-      <i class="fa fa-times" id="hide"></i>
-      <ul>
-        <li><a href="#about" id="link_about">About Us</a></li>
-        <li><a href="#desc" id="link_desc">About Wales</a></li>
-        <li><a href="#docs" id="link_docs">Documents</a></li>
-        <li><a href="#contact" id="link_contact">Contact</a></li>
+<div class="grid-container">
+  <div class="top"></div>
+  <div class="news">
+    <div class="newsList">
+      <h1 class="newsList__header">NEWS</h1>
+      <ul class="newsList__ul">
+        {% for post in site.posts limit:3 %}
+          <li class="newsList__ul--li">
+            <a class="newsList__ul--li-a" href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
+  </div>
+  <div class="images">
+    <div class="grid-container-images">
+      <div><img src="img/image1.jpg"></div>
+      <div><img src="img/image2.jpg"></div>
+      <div><img src="img/image3.jpg"></div>
+      <div><img src="img/image4.jpg"></div>
+      <div><img src="img/image5.jpg"></div>
+      <div><img src="img/image6.jpg"></div>
+      <div><img src="img/image7.jpg"></div>
+      <div><img src="img/image8.jpg"></div>
+      <div><img src="img/image9.jpg"></div>
+      <div><img src="img/image10.jpg"></div>
+      <div><img src="img/image11.jpg"></div>
+      <div><img src="img/image12.jpg"></div>
+    </div>
+  </div>
+  <div class="about" id="about">
+    <h1>About Us</h1>
+    <p>
+      　日本カムリ学会は2005年1月29日の設立記念集会（於　金城学院大学文学部大会議室）において設立されました。当初は「日本カムライグ学会」という名称で始まりましたが、2009年12月に「日本カムリ学会」と改めました。さらに2015年12月以降、本学会名に副題がつけられ、「日本カムリ学会（日本ウェールズ学会）」という名称になり、今日に至っています。
+      <button id="more_btn">続きを読む</button>
+    </p>
+    <p id="more">
+      　英国を構成する４つの国の一つ「ウェールズ」は、現地語である「ウェールズ語」では「カムリ」（Cymru）と呼びます。本学会の名称「日本カムリ学会」は、「カムリ」すなわち「ウェールズ」を研究対象とする学術団体です。カムリの国の言語・歴史・文学・社会・文化等、様々な側面について学術研究を行い、また啓蒙活動を行うことが本学会の目的です。
+      <br><br>
+      　本学会の創立者である水谷宏氏（現在本学会名誉会員）は設立記念講演において、「カムリ学」（当時の呼称では「カムライグ学」）という分野を打ち立てました。上記の通り、「カムリ学」とはカムリの国を対象とする研究分野です。今日の日本では、「カムリ学」という名称はおろか、英語名の「ウェールズ学」ですら日本語としては全く市民権を得ていません。しかし、この国の文化、歴史、文学、言語、経済など様々な側面を研究対象または関心対象とする方々は、国内に多数おられます。こういった方々の一つ一つのカムリ理解を落ち葉拾いのように集め、日本国内におけるカムリ学という研究分野を構築していくことが、本学会の目的です。
+      <br><br>
+      　当然現地カムリおよび英国、さらには西洋において、「カムリ学」はAstudiaethau Cymreig／Welsh Studiesというカムリ語または英語の名称と共に、一定の認知度を得て研究分野として確立していており、日々その研究は発展しています。日本におけるカムリ学は現在のところ、現地におけるカムリ学研究の調査とその紹介といった基礎研究が中心的作業となっています。カムリ学の基礎研究を進める上で、本学会のモットーとしていることが、研究成果の社会への還元です。そのために、平易な日本語によってカムリ学を紹介することを心がけております。カムリという国について、例えカムリ語や英語が一言も分からずとも、直接日本語でその本質が理解できるような学会を目指しています。真の意味で開かれた学会を目指しています。
+      <br>
+      <br>
+      日本カムリ学会代表幹事　小池剛史
+    </p>
+  </div>
+  <div class="desc" id="desc">
+    <h1>About Wales</h1>
+    <div class="sub-container">
+      <div class="desc_left">
+        <p>
+          　ウェールズは、英国の南西部に位置し、その面積は約2万㎢（ちょうど四国と東京を合わせた位）、その中に約300万人の人口を抱えています。山岳地帯が多く、南北をカンブリア山脈が走ります。この険しい山々がウェールズ独自の文化を守ったとも言われています。
+        </p>
+        <p>
+          　現在ウェールズの公用語となっているウェールズ語で、ウェールズのことを「カムリ」（Cymru）と呼びます。カムリは、その長い歴史の中で、独自の言語、文化、文学を次世代に伝えてきました。ただ単に伝統を守り続けるだけでなく、その時代時代の文脈の中で伝統を活かすことにより、新たな文化が常に創造され続けています。
+        </p>
+      </div>
+      <div class="desc_right">
+        <img src="img/wales_location.png" id="wales_location">
+      </div>
+    </div>
+  </div>
+  <div class="docs" id="docs">
+    <h1>Documents</h1>
+    <ul>
+      <div class="docs-container">
+        <li class="docs_folderlink">
+            <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1qjVcvZHWRK6UNLRcIj1v8xHevV6QIOOe?usp=sharing">カムリの地名のカタカナ表記</a>
+        </li>
+        <li class="docs_folderlink">
+            <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1JdTn3VmSJcHJ3e0nhLDcI6fWmvWuH7Ci?usp=sharing">寄稿・紀行・聴こう</a>
+        </li>
+      </div>
+      <div class="docs-container">
+        <li class="docs_folderlink">
+          <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1CI8eI-uyWP939GIloZHUzfgXw0O_znX-?usp=sharing">研究ノート</a>
+        </li>
+        <li class="docs_folderlink">
+            <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1k3dFGKZL2YVv2t_i60YSlKV7wLyq5zJF?usp=sharing">研究紹介</a>
+        </li>
+      </div>
+      <div class="docs-container">
+        <li class="docs_folderlink">
+          <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1GZsfgwte2aTbYzvwoolakOxsnPJkP9qJ?usp=sharing">投稿論文</a>
+        </li>
+        <li class="docs_folderlink">
+          <i class="fas fa-folder"></i><a href="https://drive.google.com/drive/folders/1aG8QmLLOSUwI7QPIfHWmAC5K-K7LzS6i?usp=sharing">報告要旨</a>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div class="map">
+    <div id="map"></div>
+  </div>
+  <div class="contact" id="contact">
+    <h1><span><i class="fas fa-envelope"></i></span>Contact</h1>
+    <div class="forms">
+      <form
+        action="https://formspree.io/xpzqejlv"
+        method="POST"
+      >
+        <p>
+          <label id="label-email">
+            Your Email
+            <br>
+            <input type="text" name="_replyto" id="form-email" placeholder="example@example.com">
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Name
+            <br>
+            <input type="text" name="name">
+          </label>
+        </p>
+        <p>
+          <label>
+            Message
+            <br>
+            <textarea name="message" rows="10"></textarea>
+          </label>
+        </p>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
     
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6I1Hnz7WIGwZsXYzhuzcjNvJ6bw3hRUU&callback=initMap"></script>
-    <script src="js/main.js"></script>
+<!-- ハンバーガーメニュー -->
+<div id="cover"></div>
+<div id="menu">
+<div>
+</div>
+  <i class="fa fa-times" id="hide"></i>
+  <ul>
+    <li><a href="#about" id="link_about">About Us</a></li>
+    <li><a href="#desc" id="link_desc">About Wales</a></li>
+    <li><a href="#docs" id="link_docs">Documents</a></li>
+    <li><a href="#contact" id="link_contact">Contact</a></li>
+  </ul>
+</div>
+    
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6I1Hnz7WIGwZsXYzhuzcjNvJ6bw3hRUU&callback=initMap"></script>
+<script src="js/main.js"></script>

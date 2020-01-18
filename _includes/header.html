@@ -1,7 +1,26 @@
 <header>
 
-  <h1>
-    <a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-  </h1>
+
+
+  <div class="header">
+    <a href="index.html">
+      <a href="{{ "/" | relative_url }}">
+        <img src="/img/header_logo.png" id="logo">
+      </a>
+    </a>
+    <div id="show">
+      <i class="material-icons md-48">menu</i>
+    </div>
+    <nav class="menu">
+      <div class="top_menu">
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#desc">About Wales</a></li>
+          <li><a href="#docs">Documents</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
 </header>
