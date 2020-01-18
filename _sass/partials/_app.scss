@@ -7,6 +7,10 @@ a {
   color: #333;
 }
 
+h2 {
+  text-align: center;
+}
+
 .material-icons.md-48 {
    font-size: 48px; 
   }
@@ -377,7 +381,7 @@ ul {
 
 .newsList__ul--li::before {
   font-family: 'Material Icons';
-  content: "\E0BE";
+  content: "\e409";
   position: absolute;
   top: 34%;
 }
@@ -420,6 +424,19 @@ ul {
 .newsList__ul--li-a {
   text-decoration: none;
   color: rgba(0, 0, 0, .87);
+}
+
+.post__container {
+  margin: 0 auto;
+}
+
+.post__container > p,
+.post__container a
+ {
+  display: block;
+  width: 80%;
+  margin: 0 auto 60px;
+  padding: 0;
 }
 
 // footer
@@ -523,5 +540,14 @@ footer {
     grid-template-rows: 300px 300px 300px;
     grid-column-gap: 12px;
     grid-row-gap: 12px;
+  }
+
+  .post__container > p,
+  .post__container a
+  {
+    display: block;
+    width: 600px;
+    margin: 0 auto 60px;
+    padding: 0;
   }
 }

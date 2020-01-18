@@ -1,5 +1,7 @@
 {% if page.intro_paragraph and page.intro_paragraph != '' %}
-  <p>
-    {{ page.intro_paragraph | markdownify | remove: '<p>' | remove: '</p>' }}
-  </p>
+  <div class="post_container">
+    <p>
+      {{ page.intro_paragraph | markdownify | remove: '<p>' | remove: '</p>' }}
+    </p>
+  </div>
 {% endif %}
