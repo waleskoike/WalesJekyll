@@ -1,182 +1,691 @@
-// Main Styles
+// // Main Styles
 
-// See the other SASS partials for typography, variables etc.
-// CSS Grid is used for the layout with fallbacks for less capable browsers
-// declared beforehand, and a @supports feature query to reset fallbacks when
-// necessary. https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks
+// // See the other SASS partials for typography, variables etc.
+// // CSS Grid is used for the layout with fallbacks for less capable browsers
+// // declared beforehand, and a @supports feature query to reset fallbacks when
+// // necessary. https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks
 
-// the body element is our primary layout grid
+// // the body element is our primary layout grid
+// body {
+//   height: 100vh;
+//   display: grid;
+//   grid-template-rows: auto 1fr auto;
+//   grid-template-columns:
+//     [full-start] minmax(1rem, 1fr)
+//     [main-start] minmax(0, 52rem) [main-end]
+//     minmax(1rem, 1fr) [full-end];
+// }
+
+// // by default, make any new children of body to span the full track
+// body > * {
+//   grid-column: full;
+//   padding: 2rem 1rem;
+// }
+
+// // header, the first grid row
+// // it is also a grid for the logo and nav
+// header {
+//   grid-column: full;
+//   display: grid;
+//   background-color: $brand-color;
+//   padding: 2rem;
+//   @media screen and (min-width: $screen-sm-min) {
+//     grid-template-columns: 1fr auto;
+//     grid-column-gap: 1rem;
+//   }
+// }
+
+// // logo, is a grid item
+// header > h1 {
+//   display: inline-block;
+//   padding-bottom: 1rem;
+//   @media screen and (min-width: $screen-sm-min) {
+//     padding-bottom: 0;
+//   }
+//   a,
+//   a:visited {
+//     text-decoration: none;
+//     border: 0;
+//     color: white;
+//     @media screen and (min-width: $screen-sm-min) {
+//       padding: 1rem;
+//     }
+//   }
+//   a:hover {
+//     color: white;
+//   }
+// }
+
+// // main menu, is a grid item
+// header > nav {
+//   @media screen and (min-width: $screen-sm-min) {
+//     float: right;
+//   }
+//   ul {
+//     // flexbox is better than grid for distributing an unknown qty of children
+//     display: flex;
+//     li {
+//       margin-right: 2rem;
+//       display: inline-block;
+//       @media screen and (min-width: $screen-sm-min) {
+//         margin-right: 0;
+//       }
+//       a,
+//       a:visited {
+//         color: white;
+//         text-decoration: none;
+//         border: 0;
+//         @media screen and (min-width: $screen-sm-min) {
+//           padding: 1rem;
+//         }
+//         &[data-current="current page"] {
+//           // you can add an active nav item style here
+//         }
+//       }
+//       a:hover {
+//         color: white;
+//       }
+//     }
+//   }
+// }
+
+// // our main content wrapper, the width scales with font size
+// main {
+//   width: 100%;
+//   max-width: 52rem;
+//   margin-right: auto;
+//   margin-left: auto;
+//   grid-column: main;
+//   display: grid;
+//   padding-top: 8rem;
+//   padding-bottom: 8rem;
+//   @media screen and (min-width: $screen-md-min) {
+//     align-content: start;
+//   }
+// }
+
+// // reset breaking fallbacks (e.g. widths) if CSS Grid is supported
+// // float, inline-block, table properties are already ignored by CSS Grid
+// @supports (display: grid) {
+//   main {
+//     width: auto;
+//     max-width: none;
+//   }
+// }
+
+// // blog posts list
+// html[data-current="blog"] main > section {
+//   ul li {
+//     padding: 2rem 0;
+//     border-bottom: 0.05em solid $hairline-color;
+//     p {
+//       padding-bottom: 0;
+//     }
+//   }
+// }
+
+// // adjacent blog posts links
+// nav[aria-label="Adjacent Posts"] {
+//   padding: 4rem 0;
+//   ul {
+//     display: flex;
+//     li {
+//       flex: 0 0 50%;
+//       width: auto;
+//       &:nth-child(2) {
+//         text-align: right;
+//       }
+//     }
+//   }
+// }
+
+// // contact form
+// html[data-current="contact"] main > form {
+//   display: grid;
+//   label {
+//     display: none;
+//   }
+//   input,
+//   textarea {
+//     width: 100%;
+//     padding: 1rem;
+//     margin-bottom: 2rem;
+//   }
+//   button {
+//     width: 100%;
+//   }
+// }
+
+// // reset CSS Grid fallbacks when they aren't required
+// @supports (display: grid) {
+//   html[data-current="contact"] main > form {
+//     input,
+//     textarea,
+//     button {
+//       width: auto;
+//       max-width: none;
+//     }
+//   }
+// }
+
+// footer {
+//   grid-column: full;
+//   display: grid;
+//   grid-template-columns:
+//     [full-start] minmax(1rem, 1fr)
+//     [main-start] minmax(0, 50rem) [main-end]
+//     minmax(1rem, 1fr) [full-end];
+//   background-color: $grey-bg-color;
+//   > small {
+//     grid-column: main;
+//   }
+// }
+
 body {
-  height: 100vh;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+  color: #333;
+}
+
+.material-icons.md-48 {
+   font-size: 48px; 
+  }
+
+/* メニュー表示、スマホ対応用 */
+.wrapper {
+  overflow-x: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;    /* 追加 */
+}
+
+/* 共通スタイルここから */
+p {
+  line-height: 1.8;
+  margin: 16px auto;
+  padding: 0 32px;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  // color: #fff;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: normal;
+  color: rgba(0, 0, 0, .67);
+  text-align: center;
+  margin: 0;
+  padding-bottom: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.grid-container {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns:
-    [full-start] minmax(1rem, 1fr)
-    [main-start] minmax(0, 52rem) [main-end]
-    minmax(1rem, 1fr) [full-end];
+  grid-template-columns: 80px 1fr 80px;
+  grid-template:
+    "header  header  header" 
+    "top     top     top"
+    "news    news    news"
+    "images  images  images"
+    "about   about   about"
+    "desc    desc    desc"
+    "docs    docs    docs"
+    "map     map     map" 
+    "contact contact  contact"
+    "animation animation animation" 
+    "footer  footer   footer";
 }
 
-// by default, make any new children of body to span the full track
-body > * {
-  grid-column: full;
-  padding: 2rem 1rem;
+/* headerここから */
+.header {
+  grid-area: header;
+  display: flex;
+  background: #fff;
 }
 
-// header, the first grid row
-// it is also a grid for the logo and nav
-header {
-  grid-column: full;
-  display: grid;
-  background-color: $brand-color;
-  padding: 2rem;
-  @media screen and (min-width: $screen-sm-min) {
-    grid-template-columns: 1fr auto;
-    grid-column-gap: 1rem;
-  }
+#logo {
+  display: block;
+  height: 75px;
+  margin: 0 auto;
+  padding: 12px 32px;
 }
 
-// logo, is a grid item
-header > h1 {
-  display: inline-block;
-  padding-bottom: 1rem;
-  @media screen and (min-width: $screen-sm-min) {
-    padding-bottom: 0;
-  }
-  a,
-  a:visited {
-    text-decoration: none;
-    border: 0;
-    color: white;
-    @media screen and (min-width: $screen-sm-min) {
-      padding: 1rem;
-    }
-  }
-  a:hover {
-    color: white;
-  }
+.menu {
+  display: none;
 }
 
-// main menu, is a grid item
-header > nav {
-  @media screen and (min-width: $screen-sm-min) {
-    float: right;
-  }
-  ul {
-    // flexbox is better than grid for distributing an unknown qty of children
-    display: flex;
-    li {
-      margin-right: 2rem;
-      display: inline-block;
-      @media screen and (min-width: $screen-sm-min) {
-        margin-right: 0;
-      }
-      a,
-      a:visited {
-        color: white;
-        text-decoration: none;
-        border: 0;
-        @media screen and (min-width: $screen-sm-min) {
-          padding: 1rem;
-        }
-        &[data-current="current page"] {
-          // you can add an active nav item style here
-        }
-      }
-      a:hover {
-        color: white;
-      }
-    }
-  }
+#show {
+  margin: 25px 32px 0 auto;
 }
 
-// our main content wrapper, the width scales with font size
-main {
+/* headerここまで */
+
+/* ハンバーガーメニューここから */
+#hide {
+  margin: 16px;
+  font-size: 40px;
+  opacity: 0.7;
+}
+
+#show, #hide {
+  float: right;
+  cursor: pointer;
+}
+
+#show:hover, #hide:hover {
+opacity: 0.5;
+}
+
+#cover {
+  background: #000;
+  opacity: 0.4;
   width: 100%;
-  max-width: 52rem;
-  margin-right: auto;
-  margin-left: auto;
-  grid-column: main;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:1;
+  display: none;
+}
+
+#menu {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: -220px;
+  background: #af6e00;
+  width: 200px;
+  min-height: 100%;
+  color: #fff;
+  /* padding-top: 16px; */
+  transition: 0.4s;
+}
+
+#menu ul {
+  padding: 60px 20px 0 20px;
+}
+
+#menu ul li {
+  line-height: 1.8;
+}
+
+body.menu-open {
+  overflow-y: hidden;
+  width:100%;
+  /* position: fixed; */
+}
+
+body.menu-open #cover {
+  display: block;
+}
+
+body.menu-open #menu {
+  right: 0;
+}
+
+/* ハンバーガーメニューここまで */
+
+/* アイキャッチ */
+.top {
+  grid-area: top;
+  padding: 12px;
+  background: linear-gradient(135deg, hsl(139,100%,34%) 0%, #af6e00 20%,#cd390f 50% ,#D30731 100%);
+  /* background: url("../img/60055371-5dc96600-9718-11e9-8f63-de8f18e14d9c.jpg"); */
+  /* background-size: cover;
+  background-position: center center; */
+  padding: 32px 0;
+  height: 30vh;
+}
+
+/* ニュース （スタイルは下部）*/
+
+.news {
+  grid-area: news;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+}
+
+/* 画像一覧 */
+.images {
+  grid-area: images;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+
+}
+
+.grid-container-images {
   display: grid;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  @media screen and (min-width: $screen-md-min) {
-    align-content: start;
-  }
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(150px, 6);
 }
 
-// reset breaking fallbacks (e.g. widths) if CSS Grid is supported
-// float, inline-block, table properties are already ignored by CSS Grid
-@supports (display: grid) {
-  main {
-    width: auto;
-    max-width: none;
-  }
+.grid-container-images img {
+width: 100%;
+height: 100%;
 }
 
-// blog posts list
-html[data-current="blog"] main > section {
-  ul li {
-    padding: 2rem 0;
-    border-bottom: 0.05em solid $hairline-color;
-    p {
-      padding-bottom: 0;
-    }
-  }
+/* 日本カムリ学会とは */
+
+.about {
+  grid-area: about;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+  padding: 32px 0;
 }
 
-// adjacent blog posts links
-nav[aria-label="Adjacent Posts"] {
-  padding: 4rem 0;
-  ul {
-    display: flex;
-    li {
-      flex: 0 0 50%;
-      width: auto;
-      &:nth-child(2) {
-        text-align: right;
-      }
-    }
-  }
+/* Walesの概要 */
+.desc {
+  /* background: hsl(200, 80%, 40%); */
+  grid-area: desc;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+  padding: 32px 0;
 }
 
-// contact form
-html[data-current="contact"] main > form {
-  display: grid;
-  label {
+/* readmore */
+#more {
+  display: none;
+}
+
+#more.open {
+  display: block;
+}
+
+#more_btn {
+  margin-top: 36px;
+}
+
+#more_btn:focus {
+  outline: 0;
+}
+
+#more_btn.close {
+  display: none;
+}
+
+#wales_location {
+  display: block;
+  margin: 0 auto;
+}
+
+/* 各種資料 */
+
+.docs {
+  grid-area: docs;
+  padding: 32px 0;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+}
+
+.docs_folderlink {
+  border: 1px solid rgba(165, 165, 165, 0.35);
+  margin: 12px 32px;
+  font-size: 16px;
+  /* padding: 16px 0; */
+  height: 32px;
+  line-height: 32px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+}
+
+.docs_folderlink:hover {
+  background:rgba(165, 165, 165, 0.35);
+  opacity: 0.8;
+}
+
+.docs a {
+  padding-right: 32px;
+  text-align: left;
+  display: block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, .67);
+}
+
+.fa-folder {
+  display: inline-block;
+  /* margin-right: auto;  */
+  color: rgba(0, 0, 0, .67);
+  opacity: 0.8;
+  padding: 8px 16px 0 32px;
+}
+
+/* Google Map */
+
+.map {
+  /* background: hsl(100, 80%, 30%); */
+  grid-area: map;
+  padding: 0;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+/* お問い合わせ */
+
+.contact {
+  /* background: hsl(100, 80%, 40%); */
+  grid-area: contact;
+  padding: 32px;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+}
+
+.fa-envelope {
+  margin-right: 4px;
+  height: 80%;
+}
+
+/* お問い合わせフォーム部品 */
+.forms {
+  margin: 0 auto;
+}
+
+.forms p {
+  margin: 16px 0;
+  padding: 0;
+}
+
+input, textarea {
+  width: 100%;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+  border-radius: 5px;
+}
+
+input {
+  height: 32px;
+  box-sizing: border-box;
+}
+
+textarea {
+  box-sizing: border-box;
+}
+
+label {
+  color: rgba(0, 0, 0, .67);
+}
+
+button {
+  background: #fff;
+  border: 1px solid rgba(165, 165, 165, 0.35);
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, .67);
+  padding: 8px 12px;
+  float: right;
+}
+
+button:hover {
+  background:rgba(165, 165, 165, 0.35);
+  opacity: 0.8;
+}
+
+/* footer */
+.footer {
+  grid-area: footer;
+  padding: 64px 32px;
+  background: #323135;
+  color: #98969c;
+  text-align: center;
+}
+
+/* ニュースのスタイルここから */
+.newsList {
+  border: 1px solid rgba(165, 165, 165, 0.35);
+  padding: 32px 0;
+}
+
+.newsList__header, h1 {
+  font-size: 24px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, .67);
+  text-align: center;
+  margin: 0;
+  padding: 32px 0;
+}
+
+.newsList__ul, ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.newsList__ul--li {
+  line-height: 1.6;
+  padding: 24px 17px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.newsList__ul--li-flex {
+  display: flex;
+}
+
+.newsList__ul--li-date {
+  font-size: 14px;
+  margin: 0;
+  font-weight: normal;
+  color: gray;
+  text-align: right;
+}
+
+.fa-angle-right {
+  color: lightgray;
+  margin-right: 10px;
+}
+
+.newsList__ul--li + .newsList__ul--li {
+  border-top: 1px solid #eee;
+}
+
+.newsList__ul--li:hover {
+  background: rgba(240, 240, 240, 0.87);
+  opacity: .75;
+}
+
+.newsList__ul--li-a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .87);
+}
+
+/* ニュースのスタイルここまで */
+
+@media (min-width: 800px) {
+
+  p {
+    width: 600px;
+  }
+
+  #show {
     display: none;
   }
-  input,
-  textarea {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 2rem;
+
+  .menu {
+    display: block;
+    margin-left: auto;
+    line-height: 99px;
   }
-  button {
+
+  .top_menu {
+    display: flex;
+  }
+
+  .top_menu li {
+    display: inline-block;
+    margin-right: 32px;
+  }
+
+  .top_menu a {
+    color: #333;
+  }
+
+  .images {
+    margin: 0 auto;
+  }
+  
+  /* 画像を３列４行で並べる */
+  .grid-container-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px 300px 300px;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+  }
+
+  .grid-container-images img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .docs-container {
+    display: flex;
+    margin: 0 auto;
+    width: 750px;
+  } 
+
+  #wales_loacation {
+    margin: 0 auto;
+  }
+
+  .newsList__ul {
+    width: 600px;
+    margin: 32px auto;
+  }
+
+  .docs_folderlink {
+    width: 50%;
+    margin: 12px 16px;
+  }
+
+  .docs {
+    /* margin: 0 32px; */
+    padding: 32px 32px;
+  }
+
+  .forms {
+    width: 400px;
+  }
+
+  .forms p {
     width: 100%;
+  }
+
+  .top {
+    height: 50vh;
   }
 }
 
-// reset CSS Grid fallbacks when they aren't required
-@supports (display: grid) {
-  html[data-current="contact"] main > form {
-    input,
-    textarea,
-    button {
-      width: auto;
-      max-width: none;
-    }
-  }
-}
-
-footer {
-  grid-column: full;
-  display: grid;
-  grid-template-columns:
-    [full-start] minmax(1rem, 1fr)
-    [main-start] minmax(0, 50rem) [main-end]
-    minmax(1rem, 1fr) [full-end];
-  background-color: $grey-bg-color;
-  > small {
-    grid-column: main;
+@media (min-width: 1236px) {
+/* 画像を４列３行で並べる */
+  .grid-container-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px 300px;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
   }
 }

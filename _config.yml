@@ -13,11 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Jekyll Netlify Boilerplate
-email: your-email@example.com
+title: 日本ウェールズ
+# email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml.
+  当初は「日本カムライグ学会」という名称で始まりましたが、2009年12月に「日本カムリ学会」と改めました。さらに2015年12月以降、本学会名に副題がつけられ、「日本カムリ学会（日本ウェールズ学会）」という名称になり、今日に至っています。
 baseurl: "" # the subpath of your site if applicable, e.g. /blog
 url: "https://jekyll-netlify-boilerplate.netlify.com" # the base hostname & protocol for your site, e.g. https://example.com
 
@@ -35,9 +34,9 @@ netlifycms: true
 analytics: false
 
 # Compress CSS
-sass:
-  style: compressed
-  sass_dir: _sass
+# sass:
+#   style: compressed
+#   sass_dir: _sass
 
 # Compress HTML (in liquid via layouts/compress.html)
 compress_html:
