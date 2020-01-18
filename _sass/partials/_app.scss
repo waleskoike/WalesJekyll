@@ -352,10 +352,12 @@ button:hover {
 footer {
   grid-area: footer;
   width: 100%;
-  padding: 64px 32px;
+  padding: 8px 32px;
   background: #323135;
   color: #98969c;
   text-align: center;
+  position: absolute;
+  bottom: 0;
 }
 
 /* ニュースのスタイルここから */
@@ -428,6 +430,8 @@ ul {
 
 .post__container {
   margin: 0 auto;
+  height: 80vh;
+  overflow: scroll;
 }
 
 .post__container > p,
@@ -435,14 +439,8 @@ ul {
  {
   display: block;
   width: 80%;
-  margin: 0 auto 60px;
+  margin: 0 auto 6px;
   padding: 0;
-}
-
-// footer
-footer {
-  position: absolute;
-  bottom: 0;
 }
 
 /* ニュースのスタイルここまで */
