@@ -6,11 +6,11 @@ layout: default
       <div class="grid-container">
         <div class="header">
           <a href="index.html">
-              <img src="img/header_logo.png" id="logo">
-            </a>
-            <div id="show">
-              <i class="material-icons md-48">menu</i>
-            </div>
+            <img src="img/header_logo.png" id="logo">
+          </a>
+          <div id="show">
+            <i class="material-icons md-48">menu</i>
+          </div>
         <nav class="menu">
           <div class="top_menu">
             <ul>
@@ -29,10 +29,7 @@ layout: default
           <ul class="newsList__ul">
             {% for post in site.posts limit:3 %}
               <li class="newsList__ul--li">
-                <div class="newsList__ul--li-flex">
-                  <span><i class="fas fa-angle-right"></i></span> <a class="newsList__ul--li-a" href="#">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </div>
+                <a class="newsList__ul--li-a" href="{{ post.url }}">{{ post.title }}</a>
               </li>
             {% endfor %}
           </ul>
@@ -179,6 +176,5 @@ layout: default
       </ul>
     </div>
     
-    <script src="https://kit.fontawesome.com/37bbfd0fb6.js" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6I1Hnz7WIGwZsXYzhuzcjNvJ6bw3hRUU&callback=initMap"></script>
     <script src="js/main.js"></script>

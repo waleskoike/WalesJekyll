@@ -548,29 +548,38 @@ button:hover {
   padding: 32px 0;
 }
 
-.newsList__ul, ul {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
+.newsList__ul--li::before {
+  font-family: 'Material Icons';
+  content: "\E0BE";
+  position: absolute;
+  top: 34%;
+}
+
 .newsList__ul--li {
+  position: relative;
   line-height: 1.6;
-  padding: 24px 17px;
   cursor: pointer;
   transition: .3s;
+}
+
+.newsList__ul--li-a {
+  padding: 24px 17px;
+  display: block;
+  margin-left: 10px;
 }
 
 .newsList__ul--li-flex {
   display: flex;
 }
 
-.newsList__ul--li-date {
-  font-size: 14px;
-  margin: 0;
-  font-weight: normal;
-  color: gray;
-  text-align: right;
+.newsList__ul--li-flex-icon {
+  line-height: 69px;
 }
 
 .fa-angle-right {
