@@ -72,6 +72,20 @@ h1 {
   background: #fff;
 }
 
+.header a {
+  padding-left: 32px;
+}
+.header h1 {
+  padding: 16px 0;
+}
+
+
+.header h1::after {
+  content: "\A 日本ウェールズ学会";
+  white-space: pre;
+  font-size: 18px;
+}
+
 #logo {
   display: block;
   height: 75px;
