@@ -21,7 +21,7 @@ h2 {
   position: relative;
   -webkit-overflow-scrolling: touch;    /* 追加 */
   min-height: 100vh;
-  padding-bottom: 150px;
+  padding-bottom: 38px;
   box-sizing: border-box;
 }
 
@@ -366,7 +366,11 @@ footer {
   font-size: 14px;
 }
 
-footer ul {
+.link > h3 {
+  text-align: center;;
+}
+
+.link ul {
   margin: 0 auto;
   width: 350px;
   margin-bottom: 20px;
