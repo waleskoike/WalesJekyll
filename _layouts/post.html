@@ -13,12 +13,12 @@ layout: default
     <ul>
       {% if page.previous.url %}
         <li>
-          <a class="preview__post" href="{{page.previous.url}}" rel="prev">- {{page.previous.title}}</a>
+          <a class="preview__post" href="{{page.previous.url}}" rel="prev">&lt; {{page.previous.title}}</a>
         </li>
       {% endif %}
       {% if page.next.url %}
         <li>
-          <a class="next__post" href="{{page.next.url}}" rel="next">- {{page.next.title}}</a>
+          <a class="next__post" href="{{page.next.url}}" rel="next">{{page.next.title}} &gt;</a>
         </li>
       {% endif %}
     </ul>
