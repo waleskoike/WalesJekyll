@@ -8,22 +8,6 @@ a {
   color: #333;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-}
-
-// .preview__post,
-// .next__post {
-//   width: 500px;
-// }
-
 .material-icons.md-48 {
   font-size: 48px; 
 }
@@ -181,6 +165,17 @@ body.menu-open #menu {
 
 .posts__navigation {
   margin-bottom: 100px;
+}
+
+.post__container > h1,
+.post__container > h2,
+.post__container > h3,
+.post__container > h4,
+.post__container > h5,
+.post__container > h6 {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* ハンバーガーメニューここまで */
@@ -631,6 +626,10 @@ ul {
 .contact__title,
 .link__title {
   font-family: 'Dosis', sans-serif;
+}
+
+.link__title {
+  padding: 32px 0;
 }
 
 .preview__post {
