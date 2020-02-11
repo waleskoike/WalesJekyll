@@ -4,25 +4,14 @@ body {
   color: #333;
 }
 
-a {
-  color: #333;
+h1 {
+  font-weight: normal;
+  color: rgba(0, 0, 0, .67);
+  text-align: center;
+  margin: 0;
+  padding-bottom: 16px;
 }
 
-.material-icons.md-48 {
-  font-size: 48px; 
-}
-
-/* メニュー表示、スマホ対応用 */
-.wrapper {
-  overflow-x: hidden;
-  position: relative;
-  -webkit-overflow-scrolling: touch;    /* 追加 */
-  min-height: 100vh;
-  padding-bottom: 38px;
-  box-sizing: border-box;
-}
-
-/* 共通スタイルここから */
 p {
   line-height: 1.8;
   margin: 16px auto;
@@ -31,18 +20,30 @@ p {
 }
 
 a {
+  color: #333;
   text-decoration: none;
-  // color: #fff;
-  cursor: pointer;
 }
 
-h1 {
-  font-weight: normal;
-  color: rgba(0, 0, 0, .67);
-  text-align: center;
-  margin: 0;
-  padding-bottom: 16px;
-  font-family: 'Raleway', sans-serif;
+.newsList__header,
+.about__title,
+.desc__title,
+.docs__title,
+.contact__title,
+.link__title {
+  font-family: 'Dosis', sans-serif;
+}
+
+.material-icons.md-48 {
+  font-size: 48px; 
+}
+
+.wrapper {
+  overflow-x: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch; 
+  min-height: 100vh;
+  padding-bottom: 38px;
+  box-sizing: border-box;
 }
 
 .grid-container {
@@ -62,7 +63,6 @@ h1 {
     "footer  footer   footer";
 }
 
-/* headerここから */
 .header {
   grid-area: header;
   display: flex;
@@ -79,7 +79,6 @@ h1 {
   padding: 10px 0;
 }
 
-/* アイキャッチ */
 .top {
   grid-area: top;
   height: 40vh;
@@ -98,9 +97,6 @@ h1 {
   margin: 25px 32px 0 auto;
 }
 
-/* headerここまで */
-
-/* ハンバーガーメニューここから */
 #hide {
   margin: 16px;
   font-size: 40px;
@@ -137,7 +133,6 @@ opacity: 0.5;
   width: 200px;
   min-height: 100%;
   color: #fff;
-  /* padding-top: 16px; */
   transition: 0.4s;
 }
 
@@ -163,8 +158,38 @@ body.menu-open #menu {
   right: 0;
 }
 
+.link__title {
+  padding: 32px 0;
+}
+
+.post__container {
+  margin: 0 auto;
+  height: 83vh;
+  overflow: scroll;
+}
+
+.post__container > h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .posts__navigation {
   margin-bottom: 100px;
+}
+
+.preview__post {
+  display: block;
+  margin: 80px auto 20px;
+  width: 80%;
+  text-decoration: underline;
+}
+
+.next__post {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  text-align: right;
+  text-decoration: underline;
 }
 
 .post__container > h1,
@@ -178,16 +203,15 @@ body.menu-open #menu {
   margin: 0 auto;
 }
 
-/* ハンバーガーメニューここまで */
-
-/* ニュース （スタイルは下部）*/
+.post__container > h2 {
+  padding: 40px 0;
+}
 
 .news {
   grid-area: news;
   border: 1px solid rgba(165, 165, 165, 0.35);
 }
 
-/* 画像一覧 */
 .images {
   grid-area: images;
   border: 1px solid rgba(165, 165, 165, 0.35);
@@ -210,23 +234,18 @@ body.menu-open #menu {
   height: 100%;
 }
 
-/* 日本カムリ学会とは */
-
 .about {
   grid-area: about;
   border: 1px solid rgba(165, 165, 165, 0.35);
   padding: 32px 0;
 }
 
-/* Walesの概要 */
 .desc {
-  /* background: hsl(200, 80%, 40%); */
   grid-area: desc;
   border: 1px solid rgba(165, 165, 165, 0.35);
   padding: 32px 0;
 }
 
-/* readmore */
 #more {
   display: none;
 }
@@ -252,8 +271,6 @@ body.menu-open #menu {
   margin: 0 auto;
 }
 
-/* 各種資料 */
-
 .docs {
   grid-area: docs;
   padding: 32px 0;
@@ -264,7 +281,6 @@ body.menu-open #menu {
   border: 1px solid rgba(165, 165, 165, 0.35);
   margin: 12px 32px;
   font-size: 16px;
-  /* padding: 16px 0; */
   height: 32px;
   line-height: 32px;
   border-radius: 5px;
@@ -288,13 +304,10 @@ body.menu-open #menu {
 
 .fa-folder {
   display: inline-block;
-  /* margin-right: auto;  */
   color: rgba(0, 0, 0, .67);
   opacity: 0.8;
   padding: 8px 16px 0 32px;
 }
-
-/* Google Map */
 
 .map {
   grid-area: map;
@@ -308,8 +321,6 @@ body.menu-open #menu {
   background-color: grey;
 }
 
-/* お問い合わせ */
-
 .contact {
   grid-area: contact;
   padding: 32px;
@@ -321,7 +332,6 @@ body.menu-open #menu {
   height: 80%;
 }
 
-/* お問い合わせフォーム部品 */
 .forms {
   margin: 0 auto;
 }
@@ -365,7 +375,6 @@ button:hover {
   opacity: 0.8;
 }
 
-/* footer */
 footer {
   grid-area: footer;
   width: 100%;
@@ -397,7 +406,6 @@ footer a {
   color: #fff;
 }
 
-/* ニュースのスタイルここから */
 .newsList {
   border: 1px solid rgba(165, 165, 165, 0.35);
   padding: 32px;
@@ -465,34 +473,6 @@ ul {
   color: rgba(0, 0, 0, .87);
 }
 
-.post__container {
-  margin: 0 auto;
-  height: 70vh;
-  // width: 80%;
-  overflow: scroll;
-}
-
-.post__container > h2 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.preview__post {
-  display: block;
-  margin: 80px auto 20px;
-  width: 438px;
-  // padding: 0 32px;
-}
-
-.next__post {
-  display: block;
-  margin: 0 auto;
-  width: 438px;
-  // padding: 0 32px;
-}
-
-/* ニュースのスタイルここまで */
-
 @media (min-width: 800px) {
   p {
     width: 600px;
@@ -525,7 +505,6 @@ ul {
     margin: 0 auto;
   }
   
-  /* 画像を３列４行で並べる */
   .grid-container-images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -560,8 +539,7 @@ ul {
   }
 
   .docs {
-    /* margin: 0 32px; */
-    padding: 32px 32px;
+    padding: 32px;
   }
 
   .forms {
@@ -615,28 +593,4 @@ ul {
     grid-column-gap: 12px;
     grid-row-gap: 12px;
   }
-}
-
-
-// apply font
-.newsList__header,
-.about__title,
-.desc__title,
-.docs__title,
-.contact__title,
-.link__title {
-  font-family: 'Dosis', sans-serif;
-}
-
-.link__title {
-  padding: 32px 0;
-}
-
-.preview__post {
-  text-decoration: underline;
-}
-
-.next__post {
-  text-align: right;
-  text-decoration: underline;
 }
