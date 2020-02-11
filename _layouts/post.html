@@ -10,7 +10,7 @@ layout: default
   {{ content }}
 
   <nav aria-label="Adjacent Posts">
-    <ul>
+    <ul class="posts__navigation">
       {% if page.previous.url %}
         <li>
           <a class="preview__post" href="{{page.previous.url}}" rel="prev">&lt; {{page.previous.title}}</a>
