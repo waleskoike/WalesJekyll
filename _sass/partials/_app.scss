@@ -584,12 +584,12 @@ ul {
     padding: 0;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  .post__container > h1,
+  .post__container > h2,
+  .post__container > h3,
+  .post__container > h4,
+  .post__container > h5,
+  .post__container > h6 {
     width: 600px;
   }
 
